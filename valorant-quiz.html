@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Valorant</title>
+    <link rel="stylesheet" href="valorant-quiz.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <a href="index.html" class="logo"><span>Quiz</span>Night</a>
+        <a href="index.html" class="contact">Retour à l'accueil</a>
+    </header>
+
+    <!-- Contenu du Quiz -->
+    <section class="quiz-container">
+        <h2>🎯 Quiz Valorant 🎯</h2>
+        <img src="assets/images/1664302216valorant-logo-png.webp" alt="logo valorant">
+        <p>Testez vos connaissances sur l’univers de Valorant !</p>
+
+        <div id="quiz">
+            <div class="question">
+                <h3>1. Combien d'agents sont disponibles dans Valorant en 2024 ?</h3>
+                <ul>
+                    <li><input type="radio" name="q1" value="a"> 18</li>
+                    <li><input type="radio" name="q1" value="b"> 22</li>
+                    <li><input type="radio" name="q1" value="c"> 24</li>
+                    <li><input type="radio" name="q1" value="d"> 26</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <h3>2. Quelle est l'arme la plus chère du jeu ?</h3>
+                <ul>
+                    <li><input type="radio" name="q2" value="a"> Phantom</li>
+                    <li><input type="radio" name="q2" value="b"> Operator</li>
+                    <li><input type="radio" name="q2" value="c"> Odin</li>
+                    <li><input type="radio" name="q2" value="d"> Vandal</li>
+                </ul>
+            </div>
+
+
+            <div class="question">
+                <h3>3. Combien y'a t-il de map dans Valorant ?</h3>
+                <ul>
+                    <li><input type="radio" name="q1" value="a"> 18</li>
+                    <li><input type="radio" name="q1" value="b"> 43</li>
+                    <li><input type="radio" name="q1" value="c"> 12</li>
+                    <li><input type="radio" name="q1" value="d"> 32</li>
+                </ul>
+            </div>
+
+
+            <button onclick="checkAnswers()">Vérifier mes réponses</button>
+        </div>
+
+        <p id="result"></p>
+    </section>
+
+    <script>
+        function checkAnswers() {
+            let score = 0;
+            const answers = {
+                q1: "c",
+                q2: "b",
+                q3: "c"
+            };
+    
+            if (document.querySelector('input[name="q1"]:checked')?.value === answers.q1) {
+                score++;
+            }
+            if (document.querySelector('input[name="q2"]:checked')?.value === answers.q2) {
+                score++;
+            }
+            if (document.querySelector('input[name="q3"]:checked')?.value === answers.q3) { // Correction ici
+                score++;
+            }
+    
+            document.getElementById("result").textContent = `🎯 Vous avez obtenu ${score} / ${Object.keys(answers).length} bonnes réponses !`;
+        }
+    </script>
+    
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="copyright">© 2025 | Quiz Valorant | Tous droits réservés</p>
+    </footer>
+</body>
+</html>
