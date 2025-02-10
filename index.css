@@ -194,6 +194,10 @@ span {
     margin: 25px 0 30px;
 }
 
+.description {
+    background-color: black;
+}
+
 /* Conteneur des cards de quiz */
 .quiz-container {
     width: 100%;

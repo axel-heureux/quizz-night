@@ -10,10 +10,10 @@
     <!-- Header du site -->
 	<header class="header">
 		<!-- Logo -->
-		<a href="#" class="logo"><span>Quiz</span>Night</a>
+		<a href="index.php" class="logo"><span>Quiz</span>Night</a>
 
 		<!-- Bouton de contact -->
-		<a href="#" class="contact">Login</a>
+		<a href="login.php" class="contact">Login</a>
 	</header>
     
     	<!-- Section d'accueil -->
@@ -27,12 +27,12 @@
 			
 			<!-- Boutons d'action -->
 			<div class="btn-box">
-				<button class="btn-1">Nos derniers quiz</button>
-				<button class="btn-2">Crée votre propre quiz</button>
+				<button class="btn-1" onclick="window.location.href='quiz-football.html'">Nos derniers quiz</button>
+				<button class="btn-2" onclick="window.location.href='login.php'">Crée votre propre quiz</button>
 			</div>
 		</div>
 		<div class="img-box">
-			<img src="assets/images/hero-image.webp" alt="Photo d'Axel">
+			<img src="assets/images/hero-image.webp">
 		</div>
 	</section>
 
