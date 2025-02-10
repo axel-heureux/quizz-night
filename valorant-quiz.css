@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("assets/images/fond_dark.jpg"); color: #ffffff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #000000;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #100f0f;
+    -webkit-text-stroke-color: black ;
+    text-decoration: none;
+    color: #673ab7; /* Changement de couleur au survol */
+    text-shadow: 0 0 25px #673ab7;
+    transform: scale(1.1); /* Légère agrandissement au survol */
+    
+}
+
+.contact {
+    color: #000000;
+    text-decoration: none;
+    background-color: #160175;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.quiz-container {
+    max-width: 600px;
+    margin: 40px auto;
+    background-color: #1b2735;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(255, 70, 85, 0.5);
+}
+
+h2 {
+    color: #ff4655;
+}
+
+.question {
+    margin: 20px 0;
+    text-align: left;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+}
+
+button {
+    background-color: #ff4655;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #d93b4a;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.footer {
+    margin-top: 30px;
+    padding: 10px;
+    background-color: #ffffff;
+}
+
+.quiz-container img {
+    width: 200px; /* Ajuste la largeur */
+    height: auto; /* Garde les proportions */
+    display: block; /* Centre l'image */
+    margin: 20px auto; /* Ajoute de l'espace autour */
+    border-radius: 10px; /* Optionnel : bords arrondis */
+}
+
+.copyright {
+color :#000000
+}
