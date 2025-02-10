@@ -7,25 +7,24 @@ body {
 }
 
 .header {
-    background-color: #000000;
-    padding: 15px;
+    background-color: #673ab7;
+    color: white;
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+    position: relative;
 }
 
 .logo {
-    font-size: 24px;
+    font-size: 32px;
     font-weight: bold;
-    color: #100f0f;
-    -webkit-text-stroke-color: black ;
+    text-transform: uppercase;
     text-decoration: none;
-    color: #673ab7; /* Changement de couleur au survol */
-    text-shadow: 0 0 25px #673ab7;
-    transform: scale(1.1); /* Légère agrandissement au survol */
-    
+    color: white;
 }
+    
+
 
 .contact {
     color: #000000;

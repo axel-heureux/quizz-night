@@ -1,0 +1,169 @@
+/* Reset CSS (options de base pour la mise en forme) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styles généraux */
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url("assets/images/fond_dark.jpg"); color: #ffffff;
+    color: #333;
+}
+
+/* Header */
+.header {
+    background-color: #673ab7;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.header .logo {
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+}
+
+.header .contact {
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+/* Container du quiz */
+.quiz-container {
+    background-color: white;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 800px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.quiz-container h2 {
+    font-size: 36px;
+    color: #ff5722; /* Une couleur dynamique pour attirer l'attention */
+    margin-bottom: 20px;
+}
+
+.quiz-container p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.quiz-container img {
+    width: 150px;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+/* Question */
+.question {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.question h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.question ul {
+    list-style: none;
+}
+
+.question li {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.question input[type="radio"] {
+    margin-right: 10px;
+}
+
+/* Bouton Vérifier mes réponses */
+button {
+    background-color: #ff5722;
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #e64a19;
+}
+
+/* Résultat */
+#result {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #ff5722;
+}
+
+/* Bouton de navigation vers Valorant */
+.btn-1 {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 30px;
+    background-color: #673ab7;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-1:hover {
+    background-color: #5e35b1;
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer .copyright {
+    font-size: 16px;
+}
+
+.footer .list {
+    list-style: none;
+    padding: 0;
+}
+
+.footer .list h2 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.footer .list li {
+    margin: 10px 0;
+}
+
+.footer .list li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.footer .list li a:hover {
+    text-decoration: underline;
+}

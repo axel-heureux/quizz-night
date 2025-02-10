@@ -40,7 +40,6 @@
                 </ul>
             </div>
 
-
             <div class="question">
                 <h3>3. Combien y'a t-il de map dans Valorant ?</h3>
                 <ul>
@@ -51,11 +50,13 @@
                 </ul>
             </div>
 
-
             <button onclick="checkAnswers()">Vérifier mes réponses</button>
         </div>
 
         <p id="result"></p>
+
+        <!-- Lien vers le quiz Football -->
+        <button class="btn-1" onclick="window.location.href='quiz-football.html'">Quizz précèdent  </button>
     </section>
 
     <script>
@@ -73,7 +74,7 @@
             if (document.querySelector('input[name="q2"]:checked')?.value === answers.q2) {
                 score++;
             }
-            if (document.querySelector('input[name="q3"]:checked')?.value === answers.q3) { // Correction ici
+            if (document.querySelector('input[name="q3"]:checked')?.value === answers.q3) {
                 score++;
             }
     
