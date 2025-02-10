@@ -9,7 +9,6 @@
 }
 
 
-
 /* HEADER */
 .header {
     position: fixed;
@@ -163,7 +162,7 @@ span {
 }
 
 
-/* SECTION ACCUEIL */
+/* SECTION QUIZ */
 .quiz {
     width: 100%;
     min-height: 100vh;
@@ -172,10 +171,10 @@ span {
     justify-content: center;
     align-items: center;
     gap: 12em; /* Espacement entre le texte et l'image */
-    padding: 30px 12% 0;
+    padding: 80px 12% 0;
 }
 
-/* Contenu de la section d'accueil */
+/* Contenu de la section des quiz */
 .quiz-content {
     max-width: 800px;
     color: white;
@@ -195,29 +194,29 @@ span {
     margin: 25px 0 30px;
 }
 
-
-
+/* Conteneur des cards de quiz */
 .quiz-container {
+    width: 100%;
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
+    justify-content: center; /* Centrer les cards */
     margin-top: 20px;
 }
 
+/* Style pour chaque card de quiz */
 .quiz-card {
-    background: white;
+    background: #673ab7;
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
     width: 250px;
+    transition: transform 0.3s ease;
 }
 
-.quiz-card img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 8px;
+.quiz-card:hover {
+    transform: translateY(-10px); /* Légère animation au survol */
 }
 
 .quiz-card h3 {
@@ -225,6 +224,17 @@ span {
     font-size: 20px;
 }
 
+.quiz-card p {
+    font-size: 16px;
+    color: white;
+}
+
+.quiz-card small {
+    font-size: 14px;
+    color: white;
+}
+
+/* Style pour le bouton de quiz */
 .btn-quiz {
     display: inline-block;
     padding: 8px 15px;
