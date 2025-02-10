@@ -8,10 +8,7 @@
     list-style: none;
 }
 
-body {
-    background-image: url("assets/images/fond_dark.jpg");
-    position: relative;
-}
+
 
 /* HEADER */
 .header {
@@ -86,7 +83,7 @@ span {
 .home {
     width: 100%;
     min-height: 100vh;
-    background: rgb(241, 241, 241);
+    background-image: url("assets/images/fond_dark.jpg");
     display: flex;
     align-items: center;
     gap: 12em; /* Espacement entre le texte et l'image */
@@ -96,6 +93,7 @@ span {
 /* Contenu de la section d'accueil */
 .home-content {
     max-width: 800px;
+    color: white;
 }
 
 .home-content h3 {
@@ -110,4 +108,171 @@ span {
 .home-content p {
     font-size: 18px;
     margin: 25px 0 30px;
+}
+
+/* Boîte de boutons dans l'accueil */
+.btn-box {
+    width: 345px;
+    display: flex;
+    gap: 2em;
+}
+
+/* Bouton 1 (ex : "Embaucher") */
+.btn-1 {
+    padding: 15px 28px;
+    background-color: black;
+    color: white;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-1:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+}
+
+/* Bouton 2 (ex : "Expérience") */
+.btn-2 {
+    padding: 15px 28px;
+    background-color: #673ab7;
+    color: white;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-2:hover {
+    background-color: white;
+    color: #673ab7;
+}
+
+/* Image de la section d'accueil */
+.img-box img {
+    border-radius: 10%;
+    width: 450px;
+}
+
+
+.quiz-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.quiz-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 250px;
+}
+
+.quiz-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.quiz-card h3 {
+    margin: 10px 0;
+    font-size: 20px;
+}
+
+.btn-quiz {
+    display: inline-block;
+    padding: 8px 15px;
+    background: #673ab7;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.btn-quiz:hover {
+    background: #512da8;
+}
+
+
+
+/* FOOTER */
+.footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 20px 0;
+    background-color: rgb(255, 255, 255);
+}
+
+/* Liens des réseaux sociaux dans le footer */
+.footer .social {
+    text-align: center;
+    padding-bottom: 25px;
+    color: white;
+}
+
+.footer .social a {
+    font-size: 24px;
+    color: black;
+    border: 2px solid #673ab7;
+    width: 40px;
+    height: 40px;
+    line-height: 38px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 8px;
+    box-shadow: inset 0 0 10px #673ab7, 0 0 10px #673ab7;
+    transition: 0.3s ease;
+}
+
+.footer .social a:hover {
+    transform: scale(1.2) translateY(-10px); /* Animation au survol */
+    color: #673ab7;
+    border: 2px solid #673ab7;
+}
+
+/* Liste de liens dans le footer */
+.footer ul {
+    margin-top: 0;
+    padding: 0;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.footer ul li a {
+    color: black;
+    border-bottom: 3px solid transparent;
+    transition: 0.3s ease;
+}
+
+.footer ul li a:hover {
+    border-bottom: 3px solid #673ab7;
+}
+
+.footer ul li {
+    display: inline-block;
+    padding: 0 15px;
+}
+
+/* Copyright dans le footer */
+.footer .copyright {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 12px;
+    color: black;
 }
