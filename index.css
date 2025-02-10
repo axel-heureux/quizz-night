@@ -163,6 +163,40 @@ span {
 }
 
 
+/* SECTION ACCUEIL */
+.quiz {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url("assets/images/fond_dark.jpg");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12em; /* Espacement entre le texte et l'image */
+    padding: 30px 12% 0;
+}
+
+/* Contenu de la section d'accueil */
+.quiz-content {
+    max-width: 800px;
+    color: white;
+}
+
+.quiz-content h3 {
+    font-size: 42px;
+}
+
+.quiz-content h1 {
+    font-size: 62px;
+    line-height: 1.2;
+}
+
+.quiz-content p {
+    font-size: 18px;
+    margin: 25px 0 30px;
+}
+
+
+
 .quiz-container {
     display: flex;
     gap: 20px;
@@ -204,7 +238,6 @@ span {
 .btn-quiz:hover {
     background: #512da8;
 }
-
 
 
 /* FOOTER */
