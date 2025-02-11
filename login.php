@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $rep = $stmt->fetch();
         if ($rep) {
             $_SESSION['username'] = $username;
-            header ("Location: index.php");
+            header ("Location: index_logged.php");
             exit;
 
         } else {
@@ -61,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!-- Header du site -->
 <header class="header">
 		<!-- Logo -->
-		<a href="index.php" class="logo"><span>Quiz</span>Night</a>
+		<a href="index.php" class="logo"><span>Quizz</span>Night</a>
 
 		<!-- Bouton de contact -->
 		<a href="login.php" class="contact">Login</a>

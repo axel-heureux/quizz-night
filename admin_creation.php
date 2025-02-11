@@ -10,7 +10,7 @@
     <!-- Header du site -->
     <header class="header">
         <!-- Logo -->
-        <a href="index.php" class="logo"><span>Quizz</span>Night</a>
+        <a href="index_logged.php" class="logo"><span>Quizz</span>Night</a>
 
         <!-- Bouton de contact -->
         <a href="logout.php" class="contact">Logout</a>
