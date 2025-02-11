@@ -8,7 +8,6 @@
     list-style: none;
 }
 
-
 /* HEADER */
 .header {
     position: fixed;
@@ -16,12 +15,12 @@
     left: 0;
     width: 100%;
     padding: 35px 12%;
-    background: rgba(0, 0, 0, 0.81);
-    backdrop-filter: blur(10px); /* Effet flou sur l'arrière-plan */
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 100; /* Placer l'en-tête au-dessus des autres éléments */
+    z-index: 100;
 }
 
 /* Logo */
@@ -33,30 +32,14 @@
 }
 
 .logo:hover {
-    color: #673ab7; /* Changement de couleur au survol */
+    color: #673ab7;
     text-shadow: 0 0 25px #673ab7;
-    transform: scale(1.1); /* Légère agrandissement au survol */
+    transform: scale(1.1);
 }
 
-/* Span pour le texte en jaune */
+/* Span pour le texte en violet */
 span {
     color: #673ab7;
-}
-
-
-/* Navigation principale */
-.navbar a {
-    font-size: 18px;
-    color: white;
-    font-weight: 500;
-    margin: 0 20px;
-    border-bottom: 3px solid transparent;
-    transition: 0.3s ease;
-}
-
-.navbar a:hover {
-    color: #673ab7;
-    border-bottom: 3px solid #673ab7; /* Soulignement au survol */
 }
 
 /* Bouton de contact */
@@ -78,17 +61,19 @@ span {
     color: white;
 }
 
+
 body {
     background-image: url("assets/images/fond_dark.jpg");
 }
 
-/* SECTION ACCUEIL */
+/* SECTION D'ACCUEIL */
 .home {
     width: 100%;
     min-height: 100vh;
     display: flex;
     align-items: center;
-    gap: 12em; /* Espacement entre le texte et l'image */
+    justify-content: space-between;
+    gap: 4em;
     padding: 30px 12% 0;
 }
 
@@ -98,13 +83,10 @@ body {
     color: white;
 }
 
-.home-content h3 {
-    font-size: 42px;
-}
-
 .home-content h1 {
     font-size: 62px;
     line-height: 1.2;
+    color: white;
 }
 
 .home-content p {
@@ -112,58 +94,74 @@ body {
     margin: 25px 0 30px;
 }
 
-/* Boîte de boutons dans l'accueil */
-.btn-box {
-    width: 345px;
-    display: flex;
-    gap: 2em;
+/* Formulaire de création de quiz */
+.create-quiz {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    margin: 50px auto;
+    max-width: 600px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* Bouton 1 (ex : "Embaucher") */
-.btn-1 {
-    padding: 15px 28px;
-    background-color: black;
-    color: white;
-    border: 2px solid transparent;
-    border-radius: 8px;
-    font-size: 18px;
-    letter-spacing: 1px;
-    font-weight: 600;
-    transition: 0.3s ease;
-    cursor: pointer;
-}
-
-.btn-1:hover {
-    background-color: white;
-    color: black;
-    border: 2px solid black;
-}
-
-/* Bouton 2 (ex : "Expérience") */
-.btn-2 {
-    padding: 15px 28px;
-    background-color: #673ab7;
-    color: white;
-    border: 2px solid transparent;
-    border-radius: 8px;
-    font-size: 18px;
-    letter-spacing: 1px;
-    font-weight: 600;
-    transition: 0.3s ease;
-    cursor: pointer;
-}
-
-.btn-2:hover {
-    background-color: white;
+.create-quiz h2 {
+    text-align: center;
+    font-size: 30px;
     color: #673ab7;
+    margin-bottom: 20px;
 }
 
-/* Image de la section d'accueil */
-.img-box img {
-    border-radius: 10%;
-    width: 450px;
+.create-quiz .form-group {
+    margin-bottom: 20px;
 }
 
+.create-quiz label {
+    font-size: 16px;
+    color: white;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.create-quiz input[type="text"],
+.create-quiz textarea,
+.create-quiz input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #673ab7;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: white;
+    background-color: #333;
+    margin-bottom: 15px;
+    transition: border-color 0.3s ease;
+}
+
+.create-quiz input[type="text"]:focus,
+.create-quiz textarea:focus,
+.create-quiz input[type="file"]:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+.create-quiz textarea {
+    height: 150px;
+}
+
+.create-quiz button.submit-btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #673ab7;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.create-quiz button.submit-btn:hover {
+    background-color: #512da8;
+}
 
 /* SECTION QUIZ */
 .quiz {
@@ -172,7 +170,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 12em; /* Espacement entre le texte et l'image */
+    gap: 4em;
     padding: 80px 12% 0;
 }
 
@@ -182,13 +180,10 @@ body {
     color: white;
 }
 
-.quiz-content h3 {
-    font-size: 42px;
-}
-
 .quiz-content h1 {
     font-size: 62px;
     line-height: 1.2;
+    color: white;
 }
 
 .quiz-content p {
@@ -196,15 +191,13 @@ body {
     margin: 25px 0 30px;
 }
 
-
-
 /* Conteneur des cards de quiz */
 .quiz-container {
     width: 100%;
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
-    justify-content: center; /* Centrer les cards */
+    justify-content: center;
     margin-top: 20px;
 }
 
@@ -221,7 +214,7 @@ body {
 }
 
 .quiz-card:hover {
-    transform: translateY(-10px); /* Légère animation au survol */
+    transform: translateY(-10px);
 }
 
 .quiz-card h3 {
@@ -254,7 +247,6 @@ body {
     background: #512da8;
 }
 
-
 /* FOOTER */
 .footer {
     position: relative;
@@ -264,7 +256,6 @@ body {
     background-color: rgb(255, 255, 255);
 }
 
-/* Liens des réseaux sociaux dans le footer */
 .footer .social {
     text-align: center;
     padding-bottom: 25px;
@@ -287,7 +278,7 @@ body {
 }
 
 .footer .social a:hover {
-    transform: scale(1.2) translateY(-10px); /* Animation au survol */
+    transform: scale(1.2) translateY(-10px);
     color: #673ab7;
     border: 2px solid #673ab7;
 }
@@ -325,20 +316,19 @@ body {
     color: black;
 }
 
-/* width */
+/* Scrollbar personnalisé */
 ::-webkit-scrollbar {
     background-color: black;
     width: 15px;
-  }
+}
   
-  /* Track */
-  ::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px grey;
     border-radius: 0px;
-  }
+}
   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     background: #673ab7;
     border-radius: 0px;
-  }
+}
+    

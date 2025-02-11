@@ -19,7 +19,7 @@
     	<!-- Section d'accueil -->
 	<section class="home">
 		<div class="home-content">
-			<h2>🎉 Bienvenue sur <span>Quizz</span>Night ! 🎉</h2>
+			<h2>🎉 Bienvenue sur<span>Quizz</span>Night ! 🎉</h2>
             <br>
 			<h3>Prêt à tester <span>vos connaissances</span> et relever des défis passionnants ? </h3>
 			<p>🚀 Que vous soyez un expert en culture générale, un fan de cinéma, un amateur d’histoire ou un passionné de sport, nous avons des quiz pour tous les goûts !</p>
@@ -27,7 +27,7 @@
 			
 			<!-- Boutons d'action -->
 			<div class="btn-box">
-				<button class="btn-1" onclick="window.location.href='quiz-football.html'">Nos derniers quiz</button>
+				<button class="btn-1" onclick="window.location.href='quiz-football.html'">Nos quiz disponible</button>
 				<button class="btn-2" onclick="window.location.href='login.php'">Crée votre propre quiz</button>
 			</div>
 		</div>
