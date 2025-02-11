@@ -7,8 +7,83 @@
 }
 
 body {
-    background-color: #080710;
+    background-image: url("assets/images/fond_dark.jpg");
     font-family: 'Poppins', sans-serif;
+}
+
+/* HEADER */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 35px 12%;
+    background: rgba(0, 0, 0, 0.81);
+    backdrop-filter: blur(10px); /* Effet flou sur l'arrière-plan */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100; /* Placer l'en-tête au-dessus des autres éléments */
+}
+
+/* Logo */
+.logo {
+    font-size: 25px;
+    color: white;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.logo:hover {
+    color: #673ab7; /* Changement de couleur au survol */
+    text-shadow: 0 0 25px #673ab7;
+    transform: scale(1.1); /* Légère agrandissement au survol */
+}
+
+/* Span pour le texte en jaune */
+span {
+    color: #673ab7;
+}
+
+
+/* Navigation principale */
+.navbar a {
+    font-size: 18px;
+    color: white;
+    font-weight: 500;
+    margin: 0 20px;
+    border-bottom: 3px solid transparent;
+    transition: 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #673ab7;
+    border-bottom: 3px solid #673ab7; /* Soulignement au survol */
+}
+
+/* Bouton de contact */
+.contact {
+    padding: 10px 28px;
+    background-color: white;
+    color: black;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.contact:hover {
+    background-color: #673ab7;
+    box-shadow: 0 0 25px #673ab7; /* Ombre au survol */
+    color: white;
+}
+
+
+.titre_connexion {
+    color: #673ab7;
+    font-weight: 800;
 }
 
 .background {
