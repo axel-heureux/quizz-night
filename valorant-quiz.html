@@ -15,7 +15,7 @@
 
     <!-- Contenu du Quiz -->
     <section class="quiz-container">
-        <h2>🎯 Quiz Valorant 🎯</h2>
+        <h2>🎯 Quizz Valorant 🎯</h2>
         <img src="assets/images/1664302216valorant-logo-png.webp" alt="logo valorant">
         <p>Testez vos connaissances sur l’univers de Valorant !</p>
 
@@ -41,12 +41,12 @@
             </div>
 
             <div class="question">
-                <h3>3. Combien y'a t-il de map dans Valorant ?</h3>
+                <h3>3. Combien y'a-t-il de maps dans Valorant ?</h3>
                 <ul>
-                    <li><input type="radio" name="q1" value="a"> 18</li>
-                    <li><input type="radio" name="q1" value="b"> 43</li>
-                    <li><input type="radio" name="q1" value="c"> 12</li>
-                    <li><input type="radio" name="q1" value="d"> 32</li>
+                    <li><input type="radio" name="q3" value="a"> 18</li>
+                    <li><input type="radio" name="q3" value="b"> 43</li>
+                    <li><input type="radio" name="q3" value="c"> 12</li>
+                    <li><input type="radio" name="q3" value="d"> 32</li>
                 </ul>
             </div>
 
@@ -55,8 +55,11 @@
 
         <p id="result"></p>
 
-        <!-- Lien vers le quiz Football -->
-        <button class="btn-1" onclick="window.location.href='quiz-football.html'">Quizz précèdent  </button>
+        <!-- Navigation entre les quiz -->
+        <div class="quiz-navigation">
+            <button class="btn-1" onclick="window.location.href='quiz-football.html'">⬅️ Quizz Précédent</button>
+            <button class="btn-2" onclick="window.location.href='musculation-quiz.html'">💪 Quizz Musculation ➡️</button>
+        </div>
     </section>
 
     <script>
@@ -81,7 +84,6 @@
             document.getElementById("result").textContent = `🎯 Vous avez obtenu ${score} / ${Object.keys(answers).length} bonnes réponses !`;
         }
     </script>
-    
 
     <!-- Footer -->
     <footer class="footer">

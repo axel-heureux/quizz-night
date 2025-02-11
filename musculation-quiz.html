@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizz Musculation</title>
+    <link rel="stylesheet" href="valorant-quiz.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <a href="index.php" class="logo"><span>Quizz</span>Night</a>
+        <a href="index.php" class="contact">Retour à l'accueil</a>
+    </header>
+
+    <!-- Contenu du Quiz Musculation -->
+    <section class="quiz-container">
+        <h2>💪 Quizz Musculation 💪</h2>
+        <img src="assets/images/Baki-PNG-Photo.png" alt="Musculation Logo">
+
+        <p>Testez vos connaissances sur l'univers de la musculation !</p>
+
+        <div id="quiz">
+            <!-- Question 1 -->
+            <div class="question">
+                <h3>1. Quel est le muscle principal sollicité lors du développé couché ?</h3>
+                <ul>
+                    <li><input type="radio" name="q1" value="a"> Biceps</li>
+                    <li><input type="radio" name="q1" value="b"> Pectoraux</li>
+                    <li><input type="radio" name="q1" value="c"> Quadriceps</li>
+                    <li><input type="radio" name="q1" value="d"> Dorsaux</li>
+                </ul>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question">
+                <h3>2. Quel est le meilleur exercice pour travailler les jambes ?</h3>
+                <ul>
+                    <li><input type="radio" name="q2" value="a"> Curl biceps</li>
+                    <li><input type="radio" name="q2" value="b"> Squat</li>
+                    <li><input type="radio" name="q2" value="c"> Développé militaire</li>
+                    <li><input type="radio" name="q2" value="d"> Crunch</li>
+                </ul>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question">
+                <h3>3. Quel nutriment est essentiel pour la prise de muscle ?</h3>
+                <ul>
+                    <li><input type="radio" name="q3" value="a"> Protéines</li>
+                    <li><input type="radio" name="q3" value="b"> Glucides</li>
+                    <li><input type="radio" name="q3" value="c"> Lipides</li>
+                    <li><input type="radio" name="q3" value="d"> Fibres</li>
+                </ul>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question">
+                <h3>4. Quel est le principal avantage du soulevé de terre ?</h3>
+                <ul>
+                    <li><input type="radio" name="q4" value="a"> Il isole uniquement les bras</li>
+                    <li><input type="radio" name="q4" value="b"> Il sollicite presque tous les muscles du corps</li>
+                    <li><input type="radio" name="q4" value="c"> Il fait perdre du poids instantanément</li>
+                    <li><input type="radio" name="q4" value="d"> Il ne sert qu’à renforcer les mollets</li>
+                </ul>
+            </div>
+
+            <button onclick="checkAnswers()">Vérifier mes réponses</button>
+        </div>
+
+        <p id="result"></p>
+
+        <!-- Bouton pour rediriger vers un autre quiz -->
+        <button class="btn-1" onclick="window.location.href='index.html'"> Retour rapide </button>
+    </section>
+
+    <script>
+        function checkAnswers() {
+            let score = 0;
+            const answers = {
+                q1: "b",  // Pectoraux
+                q2: "b",  // Squat
+                q3: "a",  // Protéines
+                q4: "b"   // Sollicite tout le corps
+            };
+
+            if (document.querySelector('input[name="q1"]:checked')?.value === answers.q1) {
+                score++;
+            }
+            if (document.querySelector('input[name="q2"]:checked')?.value === answers.q2) {
+                score++;
+            }
+            if (document.querySelector('input[name="q3"]:checked')?.value === answers.q3) {
+                score++;
+            }
+            if (document.querySelector('input[name="q4"]:checked')?.value === answers.q4) {
+                score++;
+            }
+
+            document.getElementById("result").textContent = `💪 Vous avez obtenu ${score} / 4 bonnes réponses !`;
+        }
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="copyright">© 2025 | Quiz Musculation | Tous droits réservés</p>
+    </footer>
+</body>
+</html>
