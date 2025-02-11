@@ -1,42 +1,70 @@
 <?php
-// Connexion à la base de données
-$host = 'localhost';
-$user = 'root';
-$password = '';
-$dbname = 'quiz_night';
+class Database {
+    private $host = 'localhost';
+    private $user = 'root';
+    private $password = '';
+    private $dbname = 'quiz_night';
+    private $conn;
 
-$conn = new mysqli($host, $user, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-// Requête SQL pour récupérer les derniers quiz créés
-$sql = "SELECT title, description, created_at FROM quizzes ORDER BY created_at DESC LIMIT 5";
-$result = $conn->query($sql);
-
-// Vérification si des quiz ont été trouvés
-if ($result->num_rows > 0) {
-    // Affichage des quiz sous forme de cards
-    echo '<div class="quiz-cards-container">';
-
-    // Boucle pour afficher chaque quiz sous forme de carte
-    while ($row = $result->fetch_assoc()) {
-        // Formater la date si nécessaire
-        $formatted_date = date('d M Y, H:i', strtotime($row['created_at']));
-
-        // Carte pour chaque quiz
-        echo '<div class="quiz-card">';
-        echo '<h3 class="quiz-title">' . htmlspecialchars($row['title']) . '</h3>';
-        echo '<p class="quiz-description">' . htmlspecialchars($row['description']) . '</p>';
-        echo '<small class="quiz-date">Créé le: ' . $formatted_date . '</small>';
-        echo '</div>';
+    public function __construct() {
+        $this->connectDB();
     }
 
-    echo '</div>';
-} else {
-    echo "<p>Aucun quiz disponible pour le moment.</p>";
+    private function connectDB() {
+        $this->conn = new mysqli($this->host, $this->user, $this->password, $this->dbname);
+        if ($this->conn->connect_error) {
+            die("Erreur de connexion : " . $this->conn->connect_error);
+        }
+    }
+
+    public function getConnection() {
+        return $this->conn;
+    }
+
+    public function closeConnection() {
+        $this->conn->close();
+    }
 }
 
-$conn->close();
+class Quiz {
+    private $db;
+
+    public function __construct(Database $database) {
+        $this->db = $database->getConnection();
+    }
+
+    public function getLatestQuizzes($limit = 5) {
+        $sql = "SELECT title, description, created_at FROM quizzes ORDER BY created_at DESC LIMIT ?";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bind_param("i", $limit);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+}
+
+// Initialisation de la base de données
+$db = new Database();
+
+// Récupération des derniers quiz
+$quizManager = new Quiz($db);
+$quizzes = $quizManager->getLatestQuizzes();
+
+// Fermeture de la connexion à la base de données
+$db->closeConnection();
 ?>
+
+<!-- Affichage des quiz en HTML -->
+<div class="quiz-cards-container">
+    <?php if (!empty($quizzes)) : ?>
+        <?php foreach ($quizzes as $quiz) : ?>
+            <div class="quiz-card">
+                <h3 class="quiz-title"><?= htmlspecialchars($quiz['title']); ?></h3>
+                <p class="quiz-description"><?= htmlspecialchars($quiz['description']); ?></p>
+                <small class="quiz-date">Créé le: <?= date('d M Y, H:i', strtotime($quiz['created_at'])); ?></small>
+            </div>
+        <?php endforeach; ?>
+    <?php else : ?>
+        <p>Aucun quiz disponible pour le moment.</p>
+    <?php endif; ?>
+</div>
