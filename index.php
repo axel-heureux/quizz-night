@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="stylesheet.css">
     <title>Accueil</title>
 </head>
 <body>
     <!-- Header du site -->
 	<header class="header">
 		<!-- Logo -->
-		<a href="index.php" class="logo"><span>Quiz</span>Night</a>
+		<a href="index.php" class="logo"><span>Quizz</span>Night</a>
 
 		<!-- Bouton de contact -->
 		<a href="login.php" class="contact">Login</a>
@@ -40,9 +40,10 @@
 		<div class="quiz-content">
         <h2>📝 Découvrez nos quiz disponibles</h2>
         <p>Testez vos connaisances sur les themes que l’on propose parmis les suivants...</p>
-        <div id="latest-quizzes" class="quiz-container">
-            <?php include 'get_latest_quizzes.php'; ?>
         </div>
+		<div id="latest-quizzes" class="quiz-container">
+            <?php include 'get_latest_quizzes.php'; ?>
+		</div>
             
 	</section>
 
