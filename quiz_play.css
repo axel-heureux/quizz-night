@@ -1,0 +1,103 @@
+/* Reset de style général */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+/* Styles généraux */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url("assets/images/fond_dark.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;  /* Centrer horizontalement */
+    align-items: center;  /* Centrer verticalement */
+    height: 100vh;  /* Hauteur complète de l'écran */
+}
+
+/* Conteneur principal */
+.container {
+    width: 90%;
+    max-width: 500px;
+}
+
+/* Carte du quiz */
+.card {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+/* Titre */
+h2 {
+    color: #673ab7;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+/* Sélecteur de quiz */
+.form-select {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #673ab7;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.9);
+    cursor: pointer;
+    transition: border 0.3s ease;
+}
+
+.form-select:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* Bouton */
+.btn {
+    display: inline-block;
+    width: 100%;
+    padding: 12px;
+    background-color: #673ab7;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #512da8;
+    transform: scale(1.05);
+}
+
+/* Conteneur du quiz */
+#quiz-container {
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Conteneur des résultats */
+#result-container {
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(104, 159, 56, 0.2);
+    border-radius: 12px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    text-align: center;
+}

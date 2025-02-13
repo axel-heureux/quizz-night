@@ -27,7 +27,7 @@
 			
 			<!-- Boutons d'action -->
 			<div class="btn-box">
-				<button class="btn-1" onclick="window.location.href='quiz-football.html'">Nos quiz disponible</button>
+				<button class="btn-1" onclick="window.location.href='quiz_play.php'">Nos quiz disponible</button>
 				<button class="btn-2" onclick="window.location.href='login.php'">Crée votre propre quiz</button>
 			</div>
 		</div>
