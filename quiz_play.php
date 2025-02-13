@@ -1,94 +1,72 @@
+<?php
+require 'config.php';
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="quiz-play.css">
-    <title>Accueil</title>
+    <title>Quiz Night</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-    <!-- Header du site -->
-	<header class="header">
-		<!-- Logo -->
-		<a href="index.php" class="logo"><span>Quizz</span>Night</a>
+<body class="bg-light">
 
-		<!-- Bouton de contact -->
-		<a href="login.php" class="contact">Login</a>
-	</header>
-    
-    	<!-- Section d'accueil -->
-	<section class="home">
-		<div class="home-content">
-<!-- Contenu du Quiz Football -->
-<section class="quiz-container">
-        <h2>⚽ Quizz Football ⚽</h2>
-        <img src="assets/images/Cristiano-Ronaldopng.parspng.com-10.png" alt="Football Logo">
+<div class="container mt-5">
+    <div class="card shadow-lg p-4">
+        <h2 class="text-center">Choisissez un quiz</h2>
 
-        <p>Testez vos connaissances sur le monde du football !</p>
-
-        <div id="quiz">
-            <!-- Question 1 -->
-            <div class="question">
-                <h3>1. Quel est le joueur le plus complet depuis l'histoire du football ?</h3>
-                <ul>
-                    <li><input type="radio" name="q1" value="a"> Pelé </li>
-                    <li><input type="radio" name="q1" value="b"> Cristiano Ronaldo 2008</li>
-                    <li><input type="radio" name="q1" value="c"> Lionel Messi 2012</li>
-                    <li><input type="radio" name="q1" value="d"> Maradona </li>
-                </ul>
-            </div>
-
-            <!-- Question 2 -->
-            <div class="question">
-                <h3>2. Quel joueur a remporté le plus grand nombre de Ballons d'Or ?</h3>
-                <ul>
-                    <li><input type="radio" name="q2" value="a"> Lionel Messi</li>
-                    <li><input type="radio" name="q2" value="b"> Cristiano Ronaldo</li>
-                    <li><input type="radio" name="q2" value="c"> Michel Platini</li>
-                    <li><input type="radio" name="q2" value="d"> Johan Cruyff</li>
-                </ul>
-            </div>
-
-            <!-- Question 3 -->
-            <div class="question">
-                <h3>3. Quelle équipe a remporté la Ligue des Champions en 2020 ?</h3>
-                <ul>
-                    <li><input type="radio" name="q3" value="a"> Juventus</li>
-                    <li><input type="radio" name="q3" value="b"> FC Barcelone</li>
-                    <li><input type="radio" name="q3" value="c"> Bayern Munich</li>
-                    <li><input type="radio" name="q3" value="d"> Manchester City</li>
-                </ul>
-            </div>
-
-            <!-- Question 4 -->
-            <div class="question">
-                <h3>4. Quel pays a accueilli la Coupe du Monde 2022 ?</h3>
-                <ul>
-                    <li><input type="radio" name="q4" value="a"> Russie</li>
-                    <li><input type="radio" name="q4" value="b"> Qatar</li>
-                    <li><input type="radio" name="q4" value="c"> États-Unis</li>
-                    <li><input type="radio" name="q4" value="d"> France</li>
-                </ul>
-            </div>
-
-            <button onclick="checkAnswers()">Vérifier mes réponses</button>
+        <div class="mb-3">
+            <select id="quiz" class="form-select">
+                <?php
+                $result = $conn->query("SELECT id, title FROM quizzes");
+                while ($row = $result->fetch_assoc()) {
+                    echo "<option value='{$row['id']}'>{$row['title']}</option>";
+                }
+                ?>
+            </select>
         </div>
-	</section>
 
+        <button onclick="loadQuiz()" class="btn btn-primary w-100">Lancer le quiz</button>
+    </div>
 
+    <div id="quiz-container" class="mt-4"></div>
+    <div id="result-container" class="mt-4"></div>
+</div>
 
-    	<!-- Footer -->
-	<footer class="footer">
+<script>
+    function loadQuiz() {
+        let quizId = document.getElementById("quiz").value;
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "fetch_quiz.php", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
-		<!-- Liste de liens importants -->
-		<ul class="list">
-            <h2>Quizz<span>Night</span></h2>
-			<li><a href="#">Politique de confidentialité</a></li>
-		</ul>
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                document.getElementById("quiz-container").innerHTML = xhr.responseText;
+                document.getElementById("result-container").innerHTML = "";
+            }
+        };
 
-		<!-- Copyright -->
-		<p class="copyright">© 2025 | Tous droits réservés</p>
-	</footer>
+        xhr.send("quiz_id=" + quizId);
+    }
+
+    function submitQuiz(event) {
+        event.preventDefault(); 
+
+        let formData = new FormData(document.getElementById("quiz-form"));
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "check_quiz.php", true);
+
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                document.getElementById("result-container").innerHTML = xhr.responseText;
+            }
+        };
+
+        xhr.send(formData);
+    }
+</script>
 
 </body>
 </html>
