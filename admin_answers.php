@@ -62,21 +62,29 @@ if (!$question) {
                 <div class="form-group">
                     <label for="answer_1">Réponse 1 :</label>
                     <input type="text" name="answers[]" required>
+                    <label for="is_correct_1">Est-ce la bonne réponse ?</label>
+                    <input type="radio" name="correct_answer" value="1"> Oui
                 </div>
 
                 <div class="form-group">
                     <label for="answer_2">Réponse 2 :</label>
                     <input type="text" name="answers[]">
+                    <label for="is_correct_2">Est-ce la bonne réponse ?</label>
+                    <input type="radio" name="correct_answer" value="1"> Oui
                 </div>
 
                 <div class="form-group">
                     <label for="answer_3">Réponse 3 :</label>
                     <input type="text" name="answers[]">
+                    <label for="is_correct_3">Est-ce la bonne réponse ?</label>
+                    <input type="radio" name="correct_answer" value="1"> Oui
                 </div>
 
                 <div class="form-group">
                     <label for="answer_4">Réponse 4 :</label>
                     <input type="text" name="answers[]">
+                    <label for="is_correct_4">Est-ce la bonne réponse ?</label>
+                    <input type="radio" name="correct_answer" value="1"> Oui
                 </div>
 
                 <button type="submit" class="submit-btn">Ajouter les réponses</button>

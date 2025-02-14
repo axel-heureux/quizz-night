@@ -18,17 +18,22 @@ $message = "";
 $quizId = isset($_POST['quiz_id']) ? $_POST['quiz_id'] : null;
 $questionId = isset($_POST['question_id']) ? $_POST['question_id'] : null;
 $answers = isset($_POST['answers']) ? $_POST['answers'] : [];
+$correctAnswer = isset($_POST['correct_answer']) ? $_POST['correct_answer'] : null;
 
-if ($quizId === null || $questionId === null || empty($answers)) {
-    $message = "Le Quiz ID, la Question ID et les réponses sont requis.";
+if ($quizId === null || $questionId === null || empty($answers) || $correctAnswer === null) {
+    $message = "Le Quiz ID, la Question ID, les réponses et la bonne réponse sont requis.";
 } else {
     try {
-        // Insérer les réponses dans la base de données (table 'reponse')
-        $stmt = $pdo->prepare("INSERT INTO reponse (question_id, content) VALUES (?, ?)");
+        // Insérer les réponses dans la base de données
+        $stmt = $pdo->prepare("INSERT INTO reponse (question_id, content, is_correct) VALUES (?, ?, ?)");
 
-        foreach ($answers as $answer) {
+        $correctIndex = $correctAnswer - 1; // L'index de la réponse correcte (0-3)
+
+        foreach ($answers as $index => $answer) {
+            // Vérifier si c'est la bonne réponse
+            $isCorrect = ($index === $correctIndex) ? 1 : 0;
             if (!empty($answer)) {
-                $stmt->execute([$questionId, $answer]);
+                $stmt->execute([$questionId, $answer, $isCorrect]);
             }
         }
 

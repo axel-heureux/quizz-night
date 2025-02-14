@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="index.css">
     <title>Accueil</title>
 </head>
 <body>
@@ -29,6 +29,7 @@
 			<div class="btn-box">
 				<button class="btn-1" onclick="window.location.href='quiz_play.php'">Nos quiz disponible</button>
 				<button class="btn-2" onclick="window.location.href='login.php'">Crée votre propre quiz</button>
+				<button class="btn-3" onclick="window.location.href='admin_dashboard.php'">Gerer vos quiz</button>
 			</div>
 		</div>
 		<div class="img-box">
