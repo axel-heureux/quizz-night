@@ -12,15 +12,14 @@ try {
     die("Erreur de connexion à la base de données.");
 }
 
-// Récupérer l'ID du quiz depuis l'URL
+// Récupérer l'ID du quiz à modifier
 $quizId = isset($_GET['quiz_id']) ? $_GET['quiz_id'] : null;
-
 if ($quizId === null) {
     die("Quiz ID est requis.");
 }
 
-// Récupérer les informations du quiz pour affichage
-$stmt = $pdo->prepare("SELECT title FROM quizzes WHERE id = ?");
+// Récupérer les informations du quiz à partir de l'ID
+$stmt = $pdo->prepare("SELECT * FROM quiz WHERE id = ?");
 $stmt->execute([$quizId]);
 $quiz = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -35,34 +34,42 @@ if (!$quiz) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="admin_creation.css">
-    <title>Création de la question</title>
+    <title>Modifier le Quiz</title>
 </head>
 <body>
     <!-- Header du site -->
     <header class="header">
+        <!-- Logo -->
         <a href="index_logged.php" class="logo"><span>Quizz</span>Night</a>
+
+        <!-- Bouton de contact -->
         <a href="logout.php" class="contact">Logout</a>
     </header>
 
     <!-- Section d'accueil -->
     <section class="home">
         <div class="home-content">
-            <h2>🚀 Gérez et créez vos <span>Quiz</span> en toute simplicité ! 🎯</h2>
-            <p>Bienvenue sur votre espace administrateur. Créez, modifiez et suivez vos quiz pour offrir la meilleure expérience aux joueurs !</p>
+            <h2>🎯 Modifiez facilement votre Quiz actuel ! 🚀</h2>
+            <p>Accédez à vos quiz existants et mettez à jour leurs informations pour offrir la meilleure expérience aux joueurs !</p>
         </div>
 
         <div class="create-quiz">
-            <h2>Ajouter des questions pour le quiz : <?= htmlspecialchars($quiz['title']); ?></h2>
-
-            <form action="create_question.php" method="POST">
-                <input type="hidden" name="quiz_id" value="<?= htmlspecialchars($quizId); ?>">
+            <h2>Modifier le Quiz : <?= htmlspecialchars($quiz['title']); ?></h2>
+            <form action="edit_quiz.php" method="POST">
+                <!-- Champ caché pour l'ID du quiz -->
+                <input type="hidden" name="quiz_id" value="<?= $quiz['id']; ?>">
 
                 <div class="form-group">
-                    <label for="question">Question :</label>
-                    <input type="text" id="question" name="question" required>
+                    <label for="quiz_title">Titre du Quiz :</label>
+                    <input type="text" id="title" name="title" value="<?= htmlspecialchars($quiz['title']); ?>" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="quiz_description">Description du Quiz :</label>
+                    <textarea id="description" name="description" required><?= htmlspecialchars($quiz['description']); ?></textarea>
                 </div>
 
-                <button type="submit" class="submit-btn">Ajouter la question</button>
+                <button type="submit" class="submit-btn">Mettre à jour le Quiz</button>
             </form>
         </div>
     </section>

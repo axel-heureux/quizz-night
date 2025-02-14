@@ -8,59 +8,60 @@
 </head>
 <body>
     <!-- Header du site -->
-	<header class="header">
-		<!-- Logo -->
-		<a href="index.php" class="logo"><span>Quizz</span>Night</a>
+    <header class="header">
+        <!-- Logo -->
+        <a href="index.php" class="logo"><span>Quizz</span>Night</a>
 
-		<!-- Bouton de contact -->
-		<a href="logout.php" class="contact">Logout</a>
-	</header>
+        <!-- Bouton de contact -->
+        <a href="logout.php" class="contact">Logout</a>
+    </header>
     
-    	<!-- Section d'accueil -->
-	<section class="home">
-		<div class="home-content">
-			<h2>🎉 Bienvenue sur<span>Quizz</span>Night ! 🎉</h2>
+        <!-- Section d'accueil -->
+    <section class="home">
+        <div class="home-content">
+            <h2>🎉 Bienvenue sur<span>Quizz</span>Night ! 🎉</h2>
             <br>
-			<h3>Prêt à tester <span>vos connaissances</span> et relever des défis passionnants ? </h3>
-			<p>🚀 Que vous soyez un expert en culture générale, un fan de cinéma, un amateur d’histoire ou un passionné de sport, nous avons des quiz pour tous les goûts !</p>
+            <h3>Prêt à tester <span>vos connaissances</span> et relever des défis passionnants ? </h3>
+            <p>🚀 Que vous soyez un expert en culture générale, un fan de cinéma, un amateur d’histoire ou un passionné de sport, nous avons des quiz pour tous les goûts !</p>
             <p>👉 Défiez vos amis, améliorez votre score et découvrez de nouvelles choses en vous amusant.</p>
-			
-			<!-- Boutons d'action -->
-			<div class="btn-box">
-				<button class="btn-1" onclick="window.location.href='quiz_play.php'">Nos quiz disponible</button>
-				<button class="btn-2" onclick="window.location.href='admin_creation.php'">Crée votre propre quiz</button>
-				<button class="btn-3" onclick="window.location.href='admin_dashboard.php'">Gerer vos quiz</button>
-			</div>
-		</div>
-		<div class="img-box">
-			<img src="assets/images/hero-image.webp">
-		</div>
-	</section>
+            
+            <!-- Boutons d'action -->
+            <div class="btn-box">
+                <button class="btn-1" onclick="window.location.href='quiz_play.php'">Nos quiz disponible</button>
+                <button class="btn-2" onclick="window.location.href='admin_creation.php'">Crée votre propre quiz</button>
+                <button class="btn-3" onclick="window.location.href='admin_dashboard.php'">Gerer vos quiz</button>
+            </div>
+        </div>
+        <div class="img-box">
+            <img src="assets/images/hero-image.webp">
+        </div>
+    </section>
 
     <section class="quiz">
-		<div class="quiz-content">
+        <div class="quiz-content">
         <h2>📝 Découvrez nos quiz disponibles</h2>
         <p>Testez vos connaisances sur les themes que l’on propose parmis les suivants...</p>
         </div>
-		<div id="latest-quizzes" class="quiz-container">
+        <div id="latest-quizzes" class="quiz-container">
             <?php include 'get_latest_quizzes.php'; ?>
-		</div>
+        </div>
             
-	</section>
+    </section>
 
 
-    	<!-- Footer -->
-	<footer class="footer">
+        <!-- Footer -->
+    <footer class="footer">
 
-		<!-- Liste de liens importants -->
-		<ul class="list">
+        <!-- Liste de liens importants -->
+        <ul class="list">
             <h2>Quizz<span>Night</span></h2>
-			<li><a href="#">Politique de confidentialité</a></li>
-		</ul>
+            <li><a href="#">Politique de confidentialité</a></li>
+        </ul>
 
-		<!-- Copyright -->
-		<p class="copyright">© 2025 | Tous droits réservés</p>
-	</footer>
+        <!-- Copyright -->
+        <p class="copyright">© 2025 | Tous droits réservés</p>
+    </footer>
 
 </body>
 </html>
+

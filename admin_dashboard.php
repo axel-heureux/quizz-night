@@ -64,7 +64,7 @@ require 'config.php';
     }
 
     function editQuiz(quizId) {
-        window.location.href = "edit_quiz.php?id=" + quizId;
+        window.location.href = "admin_edit_quiz.php?id=" + quizId;
     }
 
     function deleteQuiz(quizId) {
