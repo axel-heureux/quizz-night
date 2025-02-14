@@ -14,7 +14,7 @@
 <!-- Header du site -->
 <header class="header">
 		<!-- Logo -->
-		<a href="index.php" class="logo"><span>Quiz</span>Night</a>
+		<a href="index.php" class="logo"><span>Quizz</span>Night</a>
 
 		<!-- Bouton de contact -->
 		<a href="login.php" class="contact">Login</a>
