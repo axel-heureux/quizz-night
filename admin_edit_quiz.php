@@ -19,7 +19,7 @@ if ($quizId === null) {
 }
 
 // Récupérer les informations du quiz à partir de l'ID
-$stmt = $pdo->prepare("SELECT * FROM quiz WHERE id = ?");
+$stmt = $pdo->prepare("SELECT * FROM quizzes WHERE id = ?");
 $stmt->execute([$quizId]);
 $quiz = $stmt->fetch(PDO::FETCH_ASSOC);
 
