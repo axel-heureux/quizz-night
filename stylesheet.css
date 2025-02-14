@@ -1,4 +1,4 @@
-/* Reset de style général */
+/* ✅ RESET DE STYLE */
 * {
     margin: 0;
     padding: 0;
@@ -8,23 +8,22 @@
     list-style: none;
 }
 
-
-/* HEADER */
+/* ✅ HEADER */
 .header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 35px 12%;
+    padding: 20px 10%;
     background: rgba(0, 0, 0, 0.81);
-    backdrop-filter: blur(10px); /* Effet flou sur l'arrière-plan */
+    backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 100; /* Placer l'en-tête au-dessus des autres éléments */
+    z-index: 100;
 }
 
-/* Logo */
+/* LOGO */
 .logo {
     font-size: 25px;
     color: white;
@@ -33,124 +32,116 @@
 }
 
 .logo:hover {
-    color: #673ab7; /* Changement de couleur au survol */
-    text-shadow: 0 0 25px #673ab7;
-    transform: scale(1.1); /* Légère agrandissement au survol */
-}
-
-/* Span pour le texte en jaune */
-span {
     color: #673ab7;
+    text-shadow: 0 0 25px #673ab7;
+    transform: scale(1.1);
 }
 
-
-/* Navigation principale */
+/* MENU */
 .navbar a {
     font-size: 18px;
     color: white;
     font-weight: 500;
-    margin: 0 20px;
+    margin: 0 15px;
     border-bottom: 3px solid transparent;
     transition: 0.3s ease;
 }
 
 .navbar a:hover {
     color: #673ab7;
-    border-bottom: 3px solid #673ab7; /* Soulignement au survol */
+    border-bottom: 3px solid #673ab7;
 }
 
-/* Bouton de contact */
+/* BOUTON LOGIN */
 .contact {
-    padding: 10px 28px;
+    padding: 10px 20px;
     background-color: white;
     color: black;
     border: 2px solid transparent;
     border-radius: 8px;
     font-size: 16px;
-    letter-spacing: 1px;
     font-weight: 600;
     transition: 0.3s ease;
 }
 
 .contact:hover {
     background-color: #673ab7;
-    box-shadow: 0 0 25px #673ab7; /* Ombre au survol */
+    box-shadow: 0 0 15px #673ab7;
     color: white;
 }
 
+/* ✅ BACKGROUND PRINCIPAL */
 body {
     background-image: url("assets/images/fond_dark.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
-/* SECTION ACCUEIL */
+/* ✅ SECTION ACCUEIL */
 .home {
     width: 100%;
     min-height: 100vh;
     display: flex;
     align-items: center;
-    gap: 12em; /* Espacement entre le texte et l'image */
-    padding: 30px 12% 0;
+    justify-content: center;
+    gap: 5em;
+    padding: 50px 10%;
+    flex-wrap: wrap;
+    text-align: center;
 }
 
-/* Contenu de la section d'accueil */
 .home-content {
     max-width: 800px;
     color: white;
 }
 
-.home-content h3 {
+.home-content h2 {
     font-size: 42px;
 }
 
-.home-content h1 {
-    font-size: 62px;
-    line-height: 1.2;
+.home-content h3 {
+    font-size: 32px;
+    margin: 10px 0;
 }
 
 .home-content p {
     font-size: 18px;
-    margin: 25px 0 30px;
+    margin: 15px 0;
 }
 
-/* Boîte de boutons dans l'accueil */
+/* BOUTONS */
 .btn-box {
-    width: 345px;
     display: flex;
-    gap: 2em;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
 }
 
-/* Bouton 1 (ex : "Embaucher") */
+.btn-1, .btn-2 {
+    padding: 12px 24px;
+    font-size: 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
 .btn-1 {
-    padding: 15px 28px;
     background-color: black;
     color: white;
-    border: 2px solid transparent;
-    border-radius: 8px;
-    font-size: 18px;
-    letter-spacing: 1px;
-    font-weight: 600;
-    transition: 0.3s ease;
-    cursor: pointer;
+    border: 2px solid black;
 }
 
 .btn-1:hover {
     background-color: white;
     color: black;
-    border: 2px solid black;
 }
 
-/* Bouton 2 (ex : "Expérience") */
 .btn-2 {
-    padding: 15px 28px;
     background-color: #673ab7;
     color: white;
     border: 2px solid transparent;
-    border-radius: 8px;
-    font-size: 18px;
-    letter-spacing: 1px;
-    font-weight: 600;
-    transition: 0.3s ease;
-    cursor: pointer;
 }
 
 .btn-2:hover {
@@ -158,75 +149,63 @@ body {
     color: #673ab7;
 }
 
-/* Image de la section d'accueil */
+/* IMAGE D'ACCUEIL */
 .img-box img {
+    width: 100%;
+    max-width: 450px;
     border-radius: 10%;
-    width: 450px;
 }
 
-
-/* SECTION QUIZ */
+/* ✅ SECTION QUIZ */
 .quiz {
     width: 100%;
-    min-height: 100vh;
+    min-height: 80vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    gap: 12em; /* Espacement entre le texte et l'image */
-    padding: 80px 12% 0;
+    text-align: center;
+    padding: 50px 10%;
 }
 
-/* Contenu de la section des quiz */
 .quiz-content {
-    max-width: 800px;
     color: white;
+    margin-bottom: 30px;
 }
 
-.quiz-content h3 {
-    font-size: 42px;
-}
-
-.quiz-content h1 {
-    font-size: 62px;
-    line-height: 1.2;
+.quiz-content h2 {
+    font-size: 38px;
 }
 
 .quiz-content p {
     font-size: 18px;
-    margin: 25px 0 30px;
 }
 
-
-
-/* Conteneur des cards de quiz */
+/* ✅ CARDS QUIZ */
 .quiz-container {
-    width: 100%;
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
-    justify-content: center; /* Centrer les cards */
-    margin-top: 20px;
+    justify-content: center;
 }
 
-/* Style pour chaque card de quiz */
 .quiz-card {
     background: #673ab7;
     padding: 15px;
-    margin: 30px;
     border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
     width: 250px;
-    transition: transform 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .quiz-card:hover {
-    transform: translateY(-10px); /* Légère animation au survol */
+    transform: translateY(-10px);
 }
 
 .quiz-card h3 {
-    margin: 10px 0;
     font-size: 20px;
+    margin: 10px 0;
+    color: white;
 }
 
 .quiz-card p {
@@ -239,36 +218,26 @@ body {
     color: white;
 }
 
-/* Style pour le bouton de quiz */
+/* ✅ BOUTON QUIZ */
 .btn-quiz {
     display: inline-block;
     padding: 8px 15px;
-    background: #673ab7;
+    background: #512da8;
     color: white;
     border-radius: 5px;
-    text-decoration: none;
     margin-top: 10px;
 }
 
 .btn-quiz:hover {
-    background: #512da8;
+    background: #3d1a8b;
 }
 
-
-/* FOOTER */
+/* ✅ FOOTER */
 .footer {
-    position: relative;
-    bottom: 0;
     width: 100%;
-    padding: 20px 0;
-    background-color: rgb(255, 255, 255);
-}
-
-/* Liens des réseaux sociaux dans le footer */
-.footer .social {
+    padding: 20px 10%;
+    background-color: white;
     text-align: center;
-    padding-bottom: 25px;
-    color: white;
 }
 
 .footer .social a {
@@ -281,64 +250,69 @@ body {
     display: inline-block;
     text-align: center;
     border-radius: 50%;
-    margin: 0 8px;
-    box-shadow: inset 0 0 10px #673ab7, 0 0 10px #673ab7;
+    margin: 0 5px;
     transition: 0.3s ease;
 }
 
 .footer .social a:hover {
-    transform: scale(1.2) translateY(-10px); /* Animation au survol */
+    transform: scale(1.2);
     color: #673ab7;
-    border: 2px solid #673ab7;
 }
 
-/* Liste de liens dans le footer */
 .footer ul {
-    margin-top: 0;
-    padding: 0;
     font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 0;
-    text-align: center;
 }
 
 .footer ul li a {
     color: black;
-    border-bottom: 3px solid transparent;
-    transition: 0.3s ease;
 }
 
 .footer ul li a:hover {
     border-bottom: 3px solid #673ab7;
 }
 
-.footer ul li {
-    display: inline-block;
-    padding: 0 15px;
-}
-
-/* Copyright dans le footer */
-.footer .copyright {
-    margin-top: 15px;
-    text-align: center;
-    font-size: 12px;
-    color: black;
-}
-
-/* width */
+/* ✅ SCROLLBAR PERSONNALISÉE */
 ::-webkit-scrollbar {
-    background-color: black;
-    width: 15px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px grey;
-    border-radius: 0px;
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
     background: #673ab7;
-    border-radius: 0px;
-  }
+    border-radius: 10px;
+}
+
+/* ✅ RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+    .header {
+        padding: 20px 5%;
+    }
+
+    .home, .quiz {
+        padding: 50px 5%;
+    }
+
+    .btn-box {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .home {
+        flex-direction: column;
+        gap: 3em;
+        text-align: center;
+    }
+
+    .home-content h2 {
+        font-size: 32px;
+    }
+
+    .home-content h3 {
+        font-size: 24px;
+    }
+
+    .quiz-content h2 {
+        font-size: 28px;
+    }
+}
